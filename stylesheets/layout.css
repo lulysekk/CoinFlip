@@ -1,0 +1,182 @@
+.header {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-header);
+    border-bottom: 2px solid var(--border-color);
+    flex-shrink: 0;
+    position: relative;
+    padding: 0 40px;
+}
+
+.stats-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.money-val {
+    font-size: 3.2rem;
+    color: var(--gold);
+    font-weight: bold;
+    line-height: 1;
+    text-shadow: 0 0 15px var(--shadow-gold);
+}
+
+.rp-val {
+    font-size: 1.6rem;
+    color: var(--purple);
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.header-right {
+    position: absolute;
+    right: 40px;
+    background: var(--bg-card);
+    border: 1px solid var(--cyan);
+    border-radius: 8px;
+    padding: 8px 18px;
+    text-align: right;
+    min-width: 170px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    padding: 1px 0;
+}
+
+.info-row small {
+    color: var(--text-muted);
+    font-size: 0.65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.info-row b {
+    font-size: 0.95rem;
+}
+
+.val-zisk {
+    color: var(--cyan);
+}
+.val-mult {
+    color: var(--white);
+}
+.val-crit {
+    color: var(--red);
+}
+.val-auto {
+    color: var(--purple);
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 300px 1fr 320px;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.panel {
+    background: var(--bg-panel);
+    padding: 20px;
+    border: 1px solid var(--bg-card);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.center-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, var(--bg-card) 0%, var(--bg-main) 100%);
+}
+
+.history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.history-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+
+.win {
+    color: var(--green);
+    font-weight: bold;
+}
+
+.loss {
+    color: var(--red);
+}
+
+.bottom-bar {
+    height: 85px;
+    background: var(--bg-panel);
+    border-top: 2px solid var(--border-card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 20px;
+}
+
+.progress-container {
+    width: 50%;
+    height: 32px;
+    background: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--purple);
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gradient-start), var(--purple));
+    width: 0%;
+    transition: width 0.3s;
+}
+
+.progress-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    color: var(--white);
+    text-shadow: 1px 1px 3px var(--black);
+    font-size: 0.95rem;
+    z-index: 5;
+}
+
+.streak-display {
+    color: var(--cyan);
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.status-msg {
+    margin-top: 20px;
+    font-weight: bold;
+    color: var(--gold);
+    height: 24px;
+}
+
+.history-title {
+    border-bottom: 2px solid var(--border-card);
+    width: 100%;
+    text-align: center;
+}

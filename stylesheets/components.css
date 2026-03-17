@@ -1,0 +1,135 @@
+.shop-tabs {
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+    gap: 5px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: var(--bg-tab);
+    color: var(--text-muted);
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.tab-btn.active-coin {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.tab-btn.active-rp {
+    background: var(--purple);
+    color: var(--white);
+}
+
+.card {
+    background: var(--bg-card);
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border-card);
+    color: var(--text-color);
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.card:hover:not(:disabled) {
+    border-color: var(--gold);
+    background: var(--bg-tab);
+}
+
+.card:disabled {
+    opacity: 0.15;
+    cursor: not-allowed;
+    filter: grayscale(1);
+}
+
+.card b {
+    display: block;
+    font-size: 1.05rem;
+}
+
+.card small {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.coin {
+    width: 160px;
+    height: 160px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--dark-gold);
+    cursor: pointer;
+    border: 10px solid var(--dark-gold);
+    user-select: none;
+    transition: transform 0.05s;
+    box-shadow: 0 0 30px var(--shadow-box);
+}
+
+.coin:active {
+    transform: scale(0.94);
+}
+
+.flipping {
+    animation: flipAnim 0.15s infinite linear;
+}
+
+#rebirthBtn {
+    background: var(--purple);
+    color: var(--white);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+    animation: pulse 1.5s infinite;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--modal-bg);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid var(--purple);
+    text-align: center;
+    min-width: 320px;
+}
+
+.modal-btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.hidden {
+    display: none;
+}

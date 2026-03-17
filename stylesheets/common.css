@@ -1,0 +1,35 @@
+:root {
+    --bg-main: #0f0f0f;
+    --bg-header: #161616;
+    --bg-panel: #111;
+    --bg-card: #1a1a1a;
+    --bg-tab: #222;
+    --border-color: #222;
+    --border-card: #333;
+    --text-color: white;
+    --text-muted: #888;
+    --gold: #ffd700;
+    --purple: #d81df5;
+    --cyan: #00e5ff;
+    --red: #ff4444;
+    --green: #4caf50;
+    --dark-gold: #b8860b;
+    --black: #000;
+    --white: #fff;
+    --gradient-start: #5e1a72;
+    --shadow-gold: rgba(255, 215, 0, 0.2);
+    --shadow-box: rgba(255, 215, 0, 0.1);
+    --modal-bg: rgba(0, 0, 0, 0.92);
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-color);
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
