@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Flip - Lucky Edition</title>
+    <link rel="stylesheet" href="stylesheets/common.css">
+    <link rel="stylesheet" href="stylesheets/layout.css">
+    <link rel="stylesheet" href="stylesheets/components.css">
+    <link rel="stylesheet" href="stylesheets/animations.css">
+</head>
+<body>
+    <div class="header">
+        <div class="stats-center">
+            <div class="money-val"><span id="money">0</span> $</div>
+            <div class="rp-val" id="rpDisplay">0 RP</div>
+        </div>
+        <div class="header-right">
+            <div class="info-row">
+                <small>Zisk:</small>
+                <b class="val-zisk">+<span id="nextGainVal">0</span> $</b>
+            </div>
+            <div class="info-row">
+                <small>Multiply:</small>
+                <b class="val-mult"><span id="totalMultDisplay">1.0</span>x</b>
+            </div>
+            <div class="info-row">
+                <small>Crit:</small>
+                <b class="val-crit"><span id="critMultDisplay">2.0</span>x</b>
+            </div>
+            <div class="info-row">
+                <small>Auto:</small>
+                <b class="val-auto"><span id="autoTimeDisplay">OFF</span></b>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="panel">
+            <h3 class="history-title">Historie</h3>
+            <ul class="history-list" id="historyList"></ul>
+        </div>
+
+        <div class="center-panel">
+            <div class="streak-display">STREAK: <span id="streak">0</span>x</div>
+            <div class="coin" id="coinBtn">HODIT</div>
+            <div id="statusMsg" class="status-msg"></div>
+        </div>
+
+        <div class="panel">
+            <div class="shop-tabs">
+                <button class="tab-btn active-coin" id="tabCoinBtn" onclick="showShop('coin')">COIN SHOP</button>
+                <button class="tab-btn" id="tabRpBtn" onclick="showShop('rp')">RP SHOP</button>
+            </div>
+            <div id="coinShop">
+                <button class="card" id="upgValue">
+                    <b>HODNOTA MINCE</b>
+                    <small>Lvl <span id="valLvl">1</span> | <span id="costVal">10</span> $</small>
+                </button>
+                <button class="card" id="upgLuck">
+                    <b>ŠTĚSTÍ HODU</b>
+                    <small><span id="luckLvl">50</span>% | <span id="costLuck">50</span> $</small>
+                </button>
+                <button class="card" id="upgMult">
+                    <b>NÁSOBIČ</b>
+                    <small>Lvl <span id="multLvl">1</span>x | <span id="costMult">100</span> $</small>
+                </button>
+                <button class="card" id="upgCrit">
+                    <b>CRITICAL HIT</b>
+                    <small>x<span id="critLvlDisplay">2</span> (+1% šance) | <span id="costCrit">250</span> $</small>
+                </button>
+                <button class="card" id="upgAuto">
+                    <b>AUTO-FLIP</b>
+                    <small>Lvl <span id="autoLvl">0</span> | <span id="costAuto">500</span> $</small>
+                </button>
+            </div>
+            <div id="rpShop" class="hidden">
+                <button class="card" id="rbVal">
+                    <b>PERM. HODNOTA +1</b>
+                    <small>Cena: 5 RP</small>
+                </button>
+                <button class="card" id="rbMult">
+                    <b>PERM. NÁSOBIČ +1x</b>
+                    <small>Cena: 10 RP</small>
+                </button>
+                <button class="card" id="rbLuck">
+                    <b>PERM. ŠTĚSTÍ +2.5%</b>
+                    <small>Cena: 15 RP</small>
+                </button>
+                <button class="card" id="rbDisc">
+                    <b>SLEVA UPGRADŮ -5%</b>
+                    <small>Cena: 8 RP</small>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="progress-container">
+            <div class="progress-text" id="rbProgressText">ZBÝVÁ: 10 000 $</div>
+            <div class="progress-bar" id="rbBar"></div>
+        </div>
+        <button id="rebirthBtn" onclick="openRebirthModal()">REBIRTH</button>
+    </div>
+
+    <div id="doubleModal" class="modal">
+        <div class="modal-content">
+            <h2 style="color:#00e5ff">DOUBLE OR NOTHING!</h2>
+            <button class="modal-btn" style="background:#4caf50;color:#fff" onclick="handleDouble(true)">RISKNOUT</button>
+            <button class="modal-btn" style="background:#333;color:#fff" onclick="handleDouble(false)">NECHAT SI</button>
+        </div>
+    </div>
+    <div id="rebirthModal" class="modal">
+        <div class="modal-content">
+            <h2 style="color:#d81df5">POTVRDIT REBIRTH</h2>
+            <p>Získáš: <b id="modalRP" style="color:#d81df5; font-size: 1.4rem;">0</b> RP</p>
+            <p>Trvalý násobič: <b id="modalPerm" style="color:#4caf50; font-size: 1.4rem;">+0.0x</b></p>
+            <button class="modal-btn" style="background:#d81df5;color:#fff" onclick="confirmRebirth()">PŘIJMOUT</button>
+            <button class="modal-btn" style="background:#333;color:#fff" onclick="closeModal('rebirthModal')">ZAVŘÍT</button>
+        </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
